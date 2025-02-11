@@ -4,7 +4,7 @@ A Laravel package for conversion between simple unit types e.g. G to KG, IN to C
 
 ## Installation
 
-This library is installed via [Composer](http://getcomposer.org/). To install, use `composer require pointybeard/unit-converter`.
+This library is installed via [Composer](http://getcomposer.org/). To install, use `composer require pointybeard/laravel-unit-converter`.
 
 ### Requirements
 
