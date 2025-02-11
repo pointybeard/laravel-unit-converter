@@ -1,0 +1,80 @@
+{
+    "name": "pointybeard/laravel-unit-converter",
+    "description": "A Laravel package for conversion between simple unit types.",
+    "license": "MIT",
+    "type": "library",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Alannah Kearney",
+            "email": "hi@alannahkearney.com",
+            "homepage": "http://alannahkearney.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0 || ^11.0"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.16",
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^9.9",
+        "php-parallel-lint/php-console-highlighter": "^1.0",
+        "php-parallel-lint/php-parallel-lint": "^1.3",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpunit/phpunit": "^10.0 || ^11.0",
+        "thecodingmachine/phpstan-safe-rule": "^1.3.0"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "pointybeard\\LaravelUnitConverter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "composer-normalize": {
+            "indent-size": 4,
+            "indent-style": "space"
+        },
+        "laravel": {
+            "aliases": {
+                "UnitConverter": "pointybeard\\LaravelUnitConverter\\Facades\\UnitConverter"
+            },
+            "providers": [
+                "pointybeard\\LaravelUnitConverter\\Providers\\UnitConverterServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": [
+            "pint --test",
+            "parallel-lint --exclude vendor .",
+            "phpstan analyse --memory-limit=2G",
+            "phpunit --testdox"
+        ],
+        "tidy": [
+            "composer normalize",
+            "pint"
+        ]
+    }
+}
