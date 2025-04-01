@@ -3,7 +3,6 @@
     "description": "A Laravel package for conversion between simple unit types.",
     "license": "MIT",
     "type": "library",
-    "version": "1.0.0",
     "authors": [
         {
             "name": "Alannah Kearney",
@@ -14,7 +13,7 @@
     ],
     "require": {
         "php": "^8.1",
-        "illuminate/support": "^10.0 || ^11.0"
+        "illuminate/support": "^10.0 || ^11.0 || ^12.0"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.16",
@@ -70,7 +69,7 @@
             "pint --test",
             "parallel-lint --exclude vendor .",
             "phpstan analyse --memory-limit=2G",
-            "phpunit --testdox"
+            "phpunit"
         ],
         "tidy": [
             "composer normalize",
